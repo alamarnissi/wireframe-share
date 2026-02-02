@@ -1,5 +1,7 @@
 FROM php:8.2-apache
 
+COPY php.ini /usr/local/etc/php/conf.d/uploads.ini
+
 RUN a2enmod rewrite headers
 
 # Install build tools + sqlite headers, then compile pdo_sqlite

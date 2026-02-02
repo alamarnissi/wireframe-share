@@ -20,13 +20,10 @@ if (!in_array($device, $allowedDevices, true)) {
   header('Location: index.php?msg=' . urlencode('Invalid device preset.'));
   exit;
 }
-if (!$file) {
-  die("No file received");
+if (!$file || $file['error'] !== UPLOAD_ERR_OK) {
+  header('Location: index.php?msg=' . urlencode('Upload failed.'));
+  exit;
 }
-if ($file['error'] !== UPLOAD_ERR_OK) {
-  die("Upload error code: " . $file['error']);
-}
-
 
 // Basic file validation
 $tmpPath = $file['tmp_name'];
