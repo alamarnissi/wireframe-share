@@ -1,3 +1,5 @@
+![App Screenshot](./screenshot.png)
+
 # About
 
 Below is a complete tiny **“wireframe share”** app using PHP + SQLite + HTML/CSS/JS.
