@@ -1,0 +1,12 @@
+services:
+  wireframe-app:
+    build: .
+    container_name: wireframe_app
+    ports:
+      - "8080:80"
+    volumes:
+      # Persist uploaded images
+      - ./uploads:/var/www/html/uploads
+      # Persist sqlite DB file
+      - ./data:/var/www/html/data
+    restart: unless-stopped
